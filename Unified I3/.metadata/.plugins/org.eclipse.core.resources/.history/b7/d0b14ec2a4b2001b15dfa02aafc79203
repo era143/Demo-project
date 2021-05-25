@@ -1,0 +1,10 @@
+package com.iMedrix.Unified_I3.Login.Doctor;
+
+public class RemembermeCredentialsDoctor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

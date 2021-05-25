@@ -1,0 +1,35 @@
+package com.iMedrix.Unified_I3.Login.IMXAdmin;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AdminValidCredentials {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\Documents\\selenium\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("http://192.168.1.154/imedrix_backend/i3Unified/#/auth/signin/admin");
+		
+		System.out.println(driver.getTitle());
+		
+		System.out.println(driver.getCurrentUrl());
+		
+		driver.findElement(By.name("signinEmail")).sendKeys("v.krishna@imedrix.com");
+		
+		driver.findElement(By.name("password")).sendKeys("password");
+		
+//		driver.findElement(By.xpath("/html/body/app-root/app-sign-in/div/div[2]/mat-card/mat-card-content/form/div/button")).click();
+		driver.findElement(By.cssSelector("app-adminsign-in.ng-star-inserted:nth-child(2) div.row div.col-8 div.col-6.InnerDiv:nth-child(4) form.ng-pristine.ng-invalid.ng-touched:nth-child(1) div.signin-card__form-fields > button.mat-raised-button.mat-primary:nth-child(9)")).click();
+		
+		Thread.sleep(5000);
+		
+		System.out.println(driver.getCurrentUrl());
+		
+		System.out.println(driver.getTitle());
+	}
+
+}
